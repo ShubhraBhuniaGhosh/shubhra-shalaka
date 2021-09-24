@@ -8,11 +8,11 @@ public class Meeting {
 	private Calendar endDateTime;
 	private int durationInMinuts;
 	private String meetingType;
-	private List<Attendee> attendees;
+	private List<User> attendees;
 	private MeetingRoom meetingRoom;
 	
 	public Meeting(int meetingId, String meetingTitle, Calendar startDateTime, int durationInMinuts,
-			String meetingType, List<Attendee> attendees, MeetingRoom meetingRoom) {
+			String meetingType, List<User> attendees, MeetingRoom meetingRoom) {
 		this.meetingId = meetingId;
 		this.meetingTitle = meetingTitle;
 		this.startDateTime = startDateTime;
@@ -52,10 +52,10 @@ public class Meeting {
 	public void setMeetingType(String meetingType) {
 		this.meetingType = meetingType;
 	}
-	public List<Attendee> getAttendees() {
+	public List<User> getAttendees() {
 		return attendees;
 	}
-	public void setAttendees(List<Attendee> attendees) {
+	public void setAttendees(List<User> attendees) {
 		this.attendees = attendees;
 	}
 	public MeetingRoom getMeetingRoom() {

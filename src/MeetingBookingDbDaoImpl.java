@@ -82,7 +82,7 @@ public class MeetingBookingDbDaoImpl {
 		return attendees;
 	}
 
-	public List<MeetingRoom> showMeetingRoomsConditionsApplied(Calendar startdateTime, Calendar endDateTime , int capasity) {
+	public List<MeetingRoom> showMeetingRoomsConditionsApplied(Calender int capasity) {
 		PreparedStatement stmt = null;
 		ResultSet resultSet = null;
 		List<MeetingRoom> roomList = null;
@@ -125,7 +125,7 @@ public class MeetingBookingDbDaoImpl {
 	public boolean checkSeatCapacityByMeetingRoomName(String MeetingRoomName){
 		return true;
 	}
-	public boolean checkManagerCredits(???) {
+	public boolean checkManagerCredits(int ManagerId) {
 		return true;
 	}
 	public int insertValueInMeeting(Meeting bookedMeeting){
@@ -139,12 +139,12 @@ public class MeetingBookingDbDaoImpl {
 //		}
 //		return numberOfRowsUpdated;
 //	}
-	public int addAttendeeByUserIdAndMeetingId(int attendeeId,int meetingIdGotFromInsertValueInMeeting) {
+	public int addAttendeeByUserIdAndMeetingId(String emailId,int meetingIdGotFromInsertValueInMeeting) {
 		int numberOfRowsUpdated = 0;
 		return numberOfRowsUpdated;
 	}
 	
-	public int deductManagerCreditByMeetingRoomName(String MeetingRoomName,???) {
+	public int deductManagerCreditByMeetingRoomName(String MeetingRoomName,int ManagerId) {
 		int numberOfRowsUpdated = 0;
 		return numberOfRowsUpdated;
 	}

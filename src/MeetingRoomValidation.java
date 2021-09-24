@@ -6,7 +6,6 @@ public abstract class MeetingRoomValidation {
 		return false;
 	}
 	public static boolean validateMeetingBooking(MeetingBookingDbDaoImpl dao, Meeting bookedMeeting) {
-		if()
 		return true;
 		
 	}

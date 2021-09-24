@@ -3,7 +3,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -80,7 +82,7 @@ public class MeetingBookingDbDaoImpl {
 		return attendees;
 	}
 
-	public List<MeetingRoom> showMeetingRoomsConditionsApplied() {
+	public List<MeetingRoom> showMeetingRoomsConditionsApplied(Calendar startdateTime, Calendar endDateTime , int capasity) {
 		PreparedStatement stmt = null;
 		ResultSet resultSet = null;
 		List<MeetingRoom> roomList = null;
@@ -114,35 +116,35 @@ public class MeetingBookingDbDaoImpl {
 		return roomList;
 	}
 
-	public boolean checkMeetingSlotIsFreeByMeetingRoomId() {
-		return true;
-	}	
-	public boolean checkAmenitiesPresentByMeetingRoomId() {
-		return true;
-	}
-	public boolean checkSeatCapacityByMeetingRoomId(){
+//	public boolean checkMeetingSlotIsFreeByMeetingRoomId() {
+//		return true;
+//	}	
+	public boolean checkAmenitiesPresentByMeetingRoomName(String MeetingRoomName) {
 		return true;
 	}
-	public boolean checkManagerCradits() {
+	public boolean checkSeatCapacityByMeetingRoomName(String MeetingRoomName){
+		return true;
+	}
+	public boolean checkManagerCredits(???) {
 		return true;
 	}
 	public int insertValueInMeeting(Meeting bookedMeeting){
 		int numberOfRowsUpdated = 0;
-		return numberOfRowsUpdated;	
+		return meetingId;	
 	}
-	public int addAttendees(List<Attendee> attendees) {
-		int numberOfRowsUpdated = 0;
-		for(Attendee attendee:attendees) {
-			numberOfRowsUpdated+=addAttendeeByUserIdAndMeetingId(attendee);
-		}
-		return numberOfRowsUpdated;
-	}
-	public int addAttendeeByUserIdAndMeetingId(Attendee attendee) {
+//	public int addAttendees(List<Attendee> attendees) {
+//		int numberOfRowsUpdated = 0;
+//		for(Attendee attendee:attendees) {
+//			numberOfRowsUpdated+=addAttendeeByUserIdAndMeetingId(attendee);
+//		}
+//		return numberOfRowsUpdated;
+//	}
+	public int addAttendeeByUserIdAndMeetingId(int attendeeId,int meetingIdGotFromInsertValueInMeeting) {
 		int numberOfRowsUpdated = 0;
 		return numberOfRowsUpdated;
 	}
 	
-	public int deductManagerCraditByMeetingRoomId(MeetingRoom meetingRoom) {
+	public int deductManagerCreditByMeetingRoomName(String MeetingRoomName,???) {
 		int numberOfRowsUpdated = 0;
 		return numberOfRowsUpdated;
 	}

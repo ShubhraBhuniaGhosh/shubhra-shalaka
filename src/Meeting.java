@@ -1,23 +1,21 @@
-import java.sql.Date;
-import java.sql.Time;
+import java.util.Calendar;
 import java.util.List;
 
 public class Meeting {
 	private int meetingId;
 	private String meetingTitle;
-	private Date meetingDate;
-	private Time startTime;
+	private Calendar startDateTime;
+	private Calendar endDateTime;
 	private int durationInMinuts;
 	private String meetingType;
 	private List<Attendee> attendees;
 	private MeetingRoom meetingRoom;
 	
-	public Meeting(int meetingId, String meetingTitle, Date meetingDate, Time startTime, int durationInMinuts,
+	public Meeting(int meetingId, String meetingTitle, Calendar startDateTime, int durationInMinuts,
 			String meetingType, List<Attendee> attendees, MeetingRoom meetingRoom) {
 		this.meetingId = meetingId;
 		this.meetingTitle = meetingTitle;
-		this.meetingDate = meetingDate;
-		this.startTime = startTime;
+		this.startDateTime = startDateTime;
 		this.durationInMinuts = durationInMinuts;
 		this.meetingType = meetingType;
 		this.attendees = attendees;
@@ -29,17 +27,18 @@ public class Meeting {
 	public void setMeetingTitle(String meetingTitle) {
 		this.meetingTitle = meetingTitle;
 	}
-	public Date getMeetingDate() {
-		return meetingDate;
+
+	public Calendar getStartDateTime() {
+		return startDateTime;
 	}
-	public void setMeetingDate(Date meetingDate) {
-		this.meetingDate = meetingDate;
+	public void setStartDateTime(Calendar startDateTime) {
+		this.startDateTime = startDateTime;
 	}
-	public Time getStartTime() {
-		return startTime;
+	public Calendar getEndDateTime() {
+		return endDateTime;
 	}
-	public void setStartTime(Time startTime) {
-		this.startTime = startTime;
+	public void setEndDateTime(Calendar endDateTime) {
+		this.endDateTime = endDateTime;
 	}
 	public int getDurationInMinuts() {
 		return durationInMinuts;
@@ -68,4 +67,5 @@ public class Meeting {
 	public int getMeetingId() {
 		return meetingId;
 	}
+	
 }

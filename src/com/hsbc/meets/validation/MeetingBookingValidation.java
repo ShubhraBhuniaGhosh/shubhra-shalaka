@@ -3,7 +3,7 @@ package com.hsbc.meets.validation;
 
 import java.util.Calendar;
 
-import com.hsbc.meets.dao.MeetingBookingDao;
+import com.hsbc.meets.dao.MeetingDao;
 import com.hsbc.meets.exception.MeetingDurationInvalidException;
 import com.hsbc.meets.exception.MeetingStartDateTimeInvalidException;
 import com.hsbc.meets.exception.MeetingTitleInvalidException;
@@ -12,7 +12,7 @@ import com.hsbc.meets.exception.MeetingTypeInvalidException;
 
 public abstract class MeetingBookingValidation {
 
-	public static boolean validateMeetingInformation(MeetingBookingDao dao, String meetingTitle,Calendar startDateTime, int durationInMinuts,String meetingType) throws MeetingTitleInvalidException, MeetingStartDateTimeInvalidException, MeetingDurationInvalidException, MeetingTypeInvalidException{
+	public static boolean validateMeetingInformation(MeetingDao dao, String meetingTitle,Calendar startDateTime, int durationInMinuts,String meetingType) throws MeetingTitleInvalidException, MeetingStartDateTimeInvalidException, MeetingDurationInvalidException, MeetingTypeInvalidException{
 		if(validateMeetingTitle(dao, meetingTitle) && validateMeetingStartDateTime(startDateTime) && validateMeetingDurationInMinuts(durationInMinuts) && validateMeetingMeetingType(meetingType)){
 			return true;
 		}
@@ -42,7 +42,7 @@ public abstract class MeetingBookingValidation {
 		return true;
 	}
 
-	private static boolean validateMeetingTitle(MeetingBookingDao dao, String meetingTitle) throws MeetingTitleInvalidException {
+	private static boolean validateMeetingTitle(MeetingDao dao, String meetingTitle) throws MeetingTitleInvalidException {
 		if(meetingTitle.length()<4 || meetingTitle.length()>20) {
 			throw new MeetingTitleInvalidException();
 		}

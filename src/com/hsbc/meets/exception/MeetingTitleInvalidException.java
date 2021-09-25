@@ -1,5 +1,9 @@
 package com.hsbc.meets.exception;
-
+/**
+ * This classes is used when Meeting Title is Invalid.
+ * @author ShubhraBhuniaGhosh
+ *
+ */
 public class MeetingTitleInvalidException extends Exception {
 	@Override
 	public String toString() {

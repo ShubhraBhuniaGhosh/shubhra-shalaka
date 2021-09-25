@@ -1,5 +1,9 @@
 package com.hsbc.meets.exception;
-
+/**
+ * This classes is used when Meeting Start Date Time is Invalid.
+ * @author ShubhraBhuniaGhosh
+ *
+ */
 public class MeetingStartDateTimeInvalidException extends Exception {
 	@Override
 	public String toString() {

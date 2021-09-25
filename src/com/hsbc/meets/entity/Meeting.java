@@ -2,7 +2,11 @@ package com.hsbc.meets.entity;
 
 import java.util.Calendar;
 import java.util.List;
-
+/**
+ * 
+ * @author ShubhraBhuniaGhosh
+ *
+ */
 public class Meeting {
 	private int meetingId;
 	private String meetingTitle;

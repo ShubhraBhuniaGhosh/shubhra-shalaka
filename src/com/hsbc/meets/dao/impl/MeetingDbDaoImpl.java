@@ -15,7 +15,11 @@ import com.hsbc.meets.entity.Meeting;
 import com.hsbc.meets.entity.MeetingRoom;
 import com.hsbc.meets.entity.User;
 
-
+/**
+ * This class implements {@link MeetingDao}
+ * @author ShubhraBhuniaGhosh
+ *
+ */
 public class MeetingDbDaoImpl implements MeetingDao{
 
 	/**
@@ -52,7 +56,9 @@ public class MeetingDbDaoImpl implements MeetingDao{
 		}
 	}
 
-
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
 	public List<User> getAllUsers(){
 		List<User> attendees = null;
 		PreparedStatement stmt = null;
@@ -88,7 +94,9 @@ public class MeetingDbDaoImpl implements MeetingDao{
 		}
 		return attendees;
 	}
-
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
 	public List<MeetingRoom> getMeetingRoomsConditionsApplied(Calendar startDateTime, int durationInMinuts, int capasity) {
 		ArrayList<MeetingRoom> l = new ArrayList<MeetingRoom>();
 		l.add(new MeetingRoom());
@@ -99,27 +107,46 @@ public class MeetingDbDaoImpl implements MeetingDao{
 
 		return l;
 	}
-
-//	public boolean checkMeetingSlotIsFreeByMeetingRoomId() {
-//		return true;
-//	}
-	public boolean checkMeetingNameAlreadyExists(String MeetingRoomName) {
-		return false;
-		
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
+	public boolean checkMeetingSlotIsFreeByMeetingRoomId() {
+		return true;
 	}
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
+	public boolean checkMeetingNameAlreadyExists(String MeetingRoomName) {
+		return false;	
+	}
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
 	public boolean checkAmenitiesPresentByMeetingRoomName(String MeetingRoomName) {
 		return true;
 	}
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
 	public boolean checkSeatCapacityByMeetingRoomName(String MeetingRoomName){
 		return true;
 	}
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
 	public boolean checkManagerCredits(int ManagerId) {
 		return true;
 	}
-	public int insertValueInMeeting(Meeting bookedMeeting){
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
+	public int insertValueOfMeeting(Meeting bookedMeeting){
 		int numberOfRowsUpdated = 0;
 		return 1;	
 	}
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
 	public int addAttendees(List<User> attendees,int meetingId) {
 		int numberOfRowsUpdated = 0;
 		for(User attendee:attendees) {
@@ -127,13 +154,22 @@ public class MeetingDbDaoImpl implements MeetingDao{
 		}
 		return numberOfRowsUpdated;
 	}
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 * @param emailId
+	 * @param meetingIdGotFromInsertValueInMeeting
+	 * @return
+	 */
 	private int addAttendeeByUserIdAndMeetingId(String emailId,int meetingIdGotFromInsertValueInMeeting) {
 		int numberOfRowsUpdated = 0;
 		return 1;
 	}
-	
+	/**
+	 * @author ShubhraBhuniaGhosh
+	 */
 	public int deductManagerCreditByMeetingRoomName(String MeetingRoomName,int ManagerId) {
 		int numberOfRowsUpdated = 0;
 		return 1;
 	}
+
 }

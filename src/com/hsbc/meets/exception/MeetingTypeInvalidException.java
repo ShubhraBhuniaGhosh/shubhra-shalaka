@@ -1,5 +1,9 @@
 package com.hsbc.meets.exception;
-
+/**
+ * This classes is used when Meeting Type is Invalid.
+ * @author ShubhraBhuniaGhosh
+ *
+ */
 public class MeetingTypeInvalidException extends Exception {
 	@Override
 	public String toString() {
